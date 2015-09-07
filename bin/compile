@@ -18,10 +18,10 @@ github_token = if env_dir
                end
 
 if github_token.nil?
-  puts "       !!!! GITHUB_AUTH_TOKEN not set"
-  puts "       !!!!   Try `heroku config:add GITHUB_AUTH_TOKEN=<my token>`"
-  puts "       !!!!   See http://developer.github.com/v3/oauth/#non-web-application-flow"
-  exit 1
+  puts "       ! Warning: GITHUB_AUTH_TOKEN not set"
+  puts "       !   Try `heroku config:add GITHUB_AUTH_TOKEN=<my token>`"
+  puts "       !   See http://developer.github.com/v3/oauth/#non-web-application-flow"
+  exit
 end
 
 netrc_template = File.read "#{File.join(File.dirname(__FILE__), '..', 'support', 'netrc')}"
